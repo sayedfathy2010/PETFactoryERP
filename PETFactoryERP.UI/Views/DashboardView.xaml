@@ -1,0 +1,25 @@
+<Window x:Class="PETFactoryERP.UI.Views.DashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="لوحة التحكم" Height="600" Width="1000" FlowDirection="RightToLeft" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding WelcomeText}" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="مؤشرات عامة" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+            <WrapPanel>
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                    <StackPanel><TextBlock Text="خامات (كجم)" FontWeight="Bold"/><TextBlock Text="{Binding TotalRawMaterialsKg}" FontSize="18"/></StackPanel>
+                </Border>
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                    <StackPanel><TextBlock Text="منتجات تامة (قطعة)" FontWeight="Bold"/><TextBlock Text="{Binding TotalFinishedPieces}" FontSize="18"/></StackPanel>
+                </Border>
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                    <StackPanel><TextBlock Text="أوامر قيد التنفيذ" FontWeight="Bold"/><TextBlock Text="{Binding InProgressOrders}" FontSize="18"/></StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
